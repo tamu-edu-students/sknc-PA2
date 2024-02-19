@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ .highlight_ascending {
+    background-color: yellow;
+ }
+
+ .highlight_descending {
+    background-color: orange;
+ }

@@ -3,7 +3,8 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    session[:sort_by] = params[:sort_by]
+    @movies = Movie.order(session[:sort_by])
   end
 
   # GET /movies/1 or /movies/1.json
@@ -52,7 +53,7 @@ class MoviesController < ApplicationController
     @movie.destroy!
 
     respond_to do |format|
-      format.html { redirect_to movies_url, notice: "Movie was successfully destroyed." }
+      format.html { redirect_to movies_url(:sort => session[:sort_by]), notice: "Movie was successfully destroyed." }
       format.json { head :no_content }
     end
   end
