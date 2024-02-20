@@ -2,7 +2,7 @@
 
 <%= render @movie %>
 
-<div>
+<div id = "show_div">
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
   <%= link_to "Back to movies", movies_path(:sort_by => session[:sort_by]) %>
 

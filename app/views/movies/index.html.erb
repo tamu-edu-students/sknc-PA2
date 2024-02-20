@@ -1,12 +1,13 @@
-<p style="color: green"><%= notice %></p>
 <h1>Movies</h1>
-<%= link_to "Sort by title ascending", :sort_by => 'title' %>
-<%= link_to "Sort by title descending", :sort_by => 'title DESC' %>
-<%= link_to "Sort by rating ascending", :sort_by => 'rating' %>
-<%= link_to "Sort by rating descending", :sort_by => 'rating DESC' %>
-<%= link_to "Sort by release date ascending", :sort_by => 'release_date' %>
-<%= link_to "Sort by release date descending", :sort_by => 'release_date DESC' %>
-<table>
+<ul>
+  <li><%= link_to "Sort by title ascending", :sort_by => 'title'%></li>
+  <li><%= link_to "Sort by title descending", :sort_by => 'title DESC' %></li>
+  <li><%= link_to "Sort by rating ascending", :sort_by => 'rating' %></li>
+  <li><%= link_to "Sort by rating descending", :sort_by => 'rating DESC' %></li>
+  <li><%= link_to "Sort by release date ascending", :sort_by => 'release_date' %></li>
+  <li><%= link_to "Sort by release date descending", :sort_by => 'release_date DESC' %></li>
+</ul>
+<table id = "movies_table">
   <colgroup>
     <col class = "<%= highlight_sorted('title') %>" />
     <col class = "<%= highlight_sorted('rating') %>"/>
@@ -33,5 +34,6 @@
     <% end %>
   </tbody>
 </table>
-
+<div id = "new_movie">
 <%= link_to "New movie", new_movie_path %>
+</div>
